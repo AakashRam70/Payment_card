@@ -10,12 +10,18 @@
             if (Card==="1111222233334567") {
                 document.getElementById("CVV").style.display = "block"; 
             }
+            else{
+                alert("Invalid Card Number");
+            }
         }
 
         function cardCVV(){
             var CVV = document.getElementById("cvvContainer").value;
             if (CVV==="567") {
                 document.getElementById("ExpiryContainer").style.display = "block";
+            }
+            else{
+                alert("Invalid CVV");
             }
         }
 
@@ -24,11 +30,17 @@
             if (expiry==="2023") {
                 document.getElementById("btnPay").style.display = "block";
             }
+            else{
+                alert("Invalid Expiry date");
+            }
+        }
+        function Payment(){
+            document.write("Payment Successful")
         }
     </script>
 </head>
-<body>
-    <fieldset>
+<body class="d-flex justify-content-center align-items-center w-50 h-100">
+    <fieldset class="w-50">
         <legend>Payment Details</legend>
         <dl>
             <dt>Enter Card Details</dt>
@@ -49,7 +61,7 @@
                 </dd>
             </div>
         </dl>
-        <button id="btnPay" style="display: none;">Pay</button>
+        <button id="btnPay" onclick="Payment()" style="display: none;">Pay</button>
     </fieldset>
 </body>
 </html>
