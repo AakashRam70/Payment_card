@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function cardDetail(){
+            var Card = document.getElementById("Card").value;
+            if (Card==="1111222233334567") {
+                document.getElementById("CVV").style.display = "block"; 
+            }
+        }
+
+        function cardCVV(){
+            var CVV = document.getElementById("cvvContainer").value;
+            if (CVV==="567") {
+                document.getElementById("ExpiryContainer").style.display = "block";
+            }
+        }
+
+        function cardExpiry(){
+            var expiry = document.getElementById("Expiry").value;
+            if (expiry==="2023") {
+                document.getElementById("btnPay").style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Payment Details</legend>
+        <dl>
+            <dt>Enter Card Details</dt>
+            <dd><input onblur="cardDetail()" type="text" size="16" id="Card"></dd>
+            <div id="CVV" style="display: none;">
+                <dt>Enter CVV</dt>
+                <dd><input id="cvvContainer" onblur="cardCVV()" type="text" size="3"></dd>
+            </div>
+            <div id="ExpiryContainer" style="display: none;">
+                <dt>Expiry Date</dt>
+                <dd>
+                    <select id="Expiry" onchange="cardExpiry()">
+                        <option>Select Expiry</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                    </select>
+                </dd>
+            </div>
+        </dl>
+        <button id="btnPay" style="display: none;">Pay</button>
+    </fieldset>
+</body>
+</html>
